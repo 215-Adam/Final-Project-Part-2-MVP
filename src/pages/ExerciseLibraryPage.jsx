@@ -31,7 +31,11 @@ function ExerciseLibraryPage() {
   }, [loadExercises]);
 
   const filtered = useMemo(
-    () => filterExercises(exercises, { search, categoryId, muscleId }),
+    () =>
+      // Show exercises that have demonstration images first (stable sort keeps A–Z within each group).
+      filterExercises(exercises, { search, categoryId, muscleId }).sort(
+        (a, b) => Number(Boolean(b.imageUrl)) - Number(Boolean(a.imageUrl))
+      ),
     [exercises, search, categoryId, muscleId]
   );
 
