@@ -50,8 +50,8 @@ You can also register a new member or coach account from the **Sign up** page.
 Requirements: Node.js 20+ and npm.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/gymlog.git
-cd gymlog
+git clone https://github.com/215-Adam/Final-Project-Part-2-MVP.git
+cd Final-Project-Part-2-MVP
 npm install
 npm run dev        # http://localhost:5173
 ```
