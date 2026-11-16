@@ -2,7 +2,7 @@
 
 GymLog is a workout-tracking single-page application built with React. Gym members can browse a library of 800+ exercises, build their own workouts, and log the sets, reps, and weight they lift each session. Coaches can build workout plans and assign them to the members they train.
 
-**Live demo:** https://YOUR-VERCEL-URL.vercel.app <!-- replace after deploying -->
+**Live demo:** https://finalprojectp2.vercel.app
 
 ![Home page](docs/screenshots/home.jpg)
 
@@ -139,6 +139,8 @@ npm test
 API calls are mocked with `vi.spyOn`, so tests don't hit the network.
 
 ## Deployment (Vercel)
+
+Deployed at **https://finalprojectp2.vercel.app** from the `main` branch of [215-Adam/Final-Project-Part-2-MVP](https://github.com/215-Adam/Final-Project-Part-2-MVP). No environment variables are needed.
 
 1. Push this repository to GitHub.
 2. In Vercel, choose **Add New → Project**, import the GitHub repo.
