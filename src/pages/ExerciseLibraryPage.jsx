@@ -9,7 +9,17 @@ import { filterExercises } from '../utils/exercise';
 const PAGE_SIZE = 24;
 
 function ExerciseLibraryPage() {
-  const { exercises, categories, muscles, status, error, loadExercises } = useExercises();
+  const {
+    exercises,
+    categories,
+    muscles,
+    status,
+    error,
+    hasMore,
+    loadingMore,
+    loadExercises,
+    loadMore,
+  } = useExercises();
   // Local UI state: only this page cares about it.
   const [search, setSearch] = useState('');
   const [categoryId, setCategoryId] = useState(null);
@@ -68,7 +78,8 @@ function ExerciseLibraryPage() {
               ))}
             </div>
           )}
-          {visible < filtered.length && (
+          {error && <ErrorMessage message={error} onRetry={loadMore} />}
+          {visible < filtered.length ? (
             <div className="load-more">
               <button
                 type="button"
@@ -78,6 +89,19 @@ function ExerciseLibraryPage() {
                 Show more
               </button>
             </div>
+          ) : (
+            hasMore && (
+              <div className="load-more">
+                <button
+                  type="button"
+                  className="btn btn--secondary"
+                  onClick={loadMore}
+                  disabled={loadingMore}
+                >
+                  {loadingMore ? 'Loading…' : 'Load more exercises from wger'}
+                </button>
+              </div>
+            )
           )}
         </>
       )}
